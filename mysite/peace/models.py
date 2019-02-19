@@ -15,7 +15,7 @@ class Applicant(models.Model):
     phone_number = models.CharField(max_length=16,default="")
     usage = models.CharField(max_length=100,default="")
     username = models.CharField(max_length=100,default="")
-    agreement = models.BooleanField(default=False)
+    agreement = models.BooleanField(default=False, blank=False)
     permission = models.IntegerField(choices=TYPE_PERMISSIONS, default=1)
     pwd = models.CharField(max_length=100,default="")
     apply_time = models.DateTimeField(auto_now_add=True)

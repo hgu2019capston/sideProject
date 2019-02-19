@@ -4,6 +4,10 @@ from .models import Applicant
 import re
 
 class PostForm(ModelForm):
+
+    OK = ((True, 'OK'),)
+    agreement = forms.BooleanField(widget=forms.RadioSelect(choices=OK))
+
     class Meta:
         model = Applicant
         fields = ['name', 'student_number', 'email', 'phone_number',
