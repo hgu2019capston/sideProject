@@ -12,7 +12,7 @@ class PostForm(ModelForm):
     def clean_username(self):
         username = self.cleaned_data['username']
         special_case = re.findall("[^a-zA-Z0-9]",username)
-        if special_case is not None :
+        if special_case:
             raise forms.ValidationError("특수문자를 사용하지 마세요")
 
         if Applicant.objects.filter(username=username).exists():
