@@ -23,3 +23,12 @@ def deluser(username):
 
 	p = subprocess.Popen(command + [username], stdin=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
 	p.communicate(sudopwd + '\n')[1]
+
+def scripting(username):
+	sudopwd = ''
+	command = 'sudo usermod -a -G peace'
+	command = command.split()
+
+	p = subprocess.Popen(command + [username], stdin=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+	p.communicate(sudopwd + '\n')[1]
+	

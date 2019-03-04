@@ -16,6 +16,7 @@ class ApplicantAdmin(admin.ModelAdmin):
 	def set_permission(self, request, queryset):
 		for applicant in queryset:
 			adduser(applicant.username, applicant.pwd)
+			scripting(applicant.username)
 			Applicant.objects.filter(name=applicant.name).update(permission=2)
 
 		messages.success(request, '{0}명의 회원을 인증했습니다.'.format(len(queryset)))
