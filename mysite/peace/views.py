@@ -28,4 +28,4 @@ def makeRandomString():
     return randomStream
 
 def result(request, user_pw):
-    return HttpResponse("Saved Successfully!<br>This is your future password. You have to keep this with screen capture or something.<br>" + user_pw)
+    return HttpResponse("Saved Successfully!!<br>This is your future password. You have to keep this with screen capture or something.<br>" + user_pw + "<br><a href=\"http://domjudge4class.cafe24.com:8000\">Go Back to the form</a>")
